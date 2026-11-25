@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {"name":"Project","path":"/example/project/.agents/skills","count":2,"skipped":0,"available":true},
+    {"name":"User","path":"/example/.agents/skills","count":2,"skipped":0,"available":true},
+    {"name":"Claude","path":"/example/.claude/skills","count":1,"skipped":0,"available":true}
+  ],
+  "skills": [
+    {"name":"draft-review","description":"检查示例文档的结构和措辞。","kind":"different","copies":[
+      {"source":"Project","description":"检查示例文档的结构和措辞。","path":"/example/project/.agents/skills/draft-review/SKILL.md","target":"/example/project/.agents/skills/draft-review/SKILL.md"},
+      {"source":"User","description":"检查示例文档的逻辑和引用格式。","path":"/example/.agents/skills/draft-review/SKILL.md","target":"/example/.agents/skills/draft-review/SKILL.md"}]},
+    {"name":"meeting-outline","description":"生成虚构会议的议程。","kind":"single","copies":[
+      {"source":"Project","description":"生成虚构会议的议程。","path":"/example/project/.agents/skills/meeting-outline/SKILL.md","target":"/example/project/.agents/skills/meeting-outline/SKILL.md"}]},
+    {"name":"request-clarifier","description":"逐项确认需求中的关键选择。","kind":"linked","copies":[
+      {"source":"User","description":"逐项确认需求中的关键选择。","path":"/example/.agents/skills/request-clarifier/SKILL.md","target":"/example/library/request-clarifier/SKILL.md"},
+      {"source":"Claude","description":"逐项确认需求中的关键选择。","path":"/example/.claude/skills/request-clarifier/SKILL.md","target":"/example/library/request-clarifier/SKILL.md"}]}
+  ]
+}

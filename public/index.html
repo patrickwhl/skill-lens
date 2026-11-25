@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skill Lens · 本机技能管理</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a href="/" class="brand"><span class="mark" aria-hidden="true">◎</span> Skill Lens</a>
+    <button id="refresh" type="button">重新扫描</button>
+  </header>
+  <main>
+    <section class="intro">
+      <h1>本机技能管理</h1>
+      <p>查找技能、识别重复版本，把常用项加入收藏。</p>
+    </section>
+    <dl class="metrics" aria-label="扫描概况">
+      <div><dt>技能名称</dt><dd id="count">—</dd></div>
+      <div><dt>扫描条目</dt><dd id="copies">—</dd></div>
+      <div><dt>同名不同版本</dt><dd id="conflicts">—</dd></div>
+      <div><dt>可用来源</dt><dd id="roots">—</dd></div>
+    </dl>
+    <div class="layout">
+      <aside>
+        <h2>来源</h2>
+        <div id="sources" class="sources"></div>
+        <details id="diagnostics"><summary>扫描详情</summary><ul id="source-paths"></ul></details>
+      </aside>
+      <section class="catalog" aria-label="技能目录">
+        <div class="filters">
+          <label class="search"><span>搜索</span><input id="query" type="search" placeholder="技能名称、描述或路径"></label>
+          <label><span>状态</span><select id="kind"><option value="">全部状态</option><option value="different">不同版本</option><option value="identical">说明相同</option><option value="linked">同一文件</option><option value="single">单一入口</option><option value="pinned">已收藏</option></select></label>
+        </div>
+        <p class="result-count" id="status" role="status">正在扫描…</p>
+        <div id="skills"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
